@@ -1,0 +1,114 @@
+using Microsoft.Reporting.WinForms;
+
+namespace ReportsApplication1
+{
+    partial class Form1
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+
+            /*
+             * 
+             * protected void Page_Init(object sender, EventArgs e)  
+{  
+    if (!Page.IsPostBack)  
+    {  
+        // Set the processing mode for the ReportViewer to Remote  
+        reportViewer.ProcessingMode = ProcessingMode.Remote;  
+  
+        ServerReport serverReport = reportViewer.ServerReport;  
+  
+        // Set the report server URL and report path  
+        serverReport.ReportServerUrl =  
+            new Uri("https://<Server Name>/reportserver");  
+        serverReport.ReportPath =  
+            "/AdventureWorks Sample Reports/Sales Order Detail";  
+  
+        // Create the sales order number report parameter  
+        ReportParameter salesOrderNumber = new ReportParameter();  
+        salesOrderNumber.Name = "SalesOrderNumber";  
+        salesOrderNumber.Values.Add("SO43661");  
+  
+        // Set the report parameters for the report  
+        reportViewer.ServerReport.SetParameters(  
+            new ReportParameter[] { salesOrderNumber });  
+    }  
+}
+             */
+
+
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.SuspendLayout();
+            // 
+            // reportViewer1
+            // 
+
+
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.Size = new System.Drawing.Size(682, 386);
+            this.reportViewer1.TabIndex = 0;
+
+            this.reportViewer1.ServerReport.ReportServerCredentials.ToString();
+            //this.reportViewer1.ServerReport.SetDataSourceCredentials(credential1);
+
+            // Create the sales order number report parameter  
+            ReportParameter salesStore = new ReportParameter();
+            salesStore.Name = "StoreID";
+            //salesStore.Name = "Modified Date";
+           
+            
+            // Set the report parameters for the report  
+
+         //   this.reportViewer1.ServerReport.ReportServerUrl = new System.Uri("https://laptop-g6fkb0ia/reportserver");
+            this.reportViewer1.ServerReport.ReportPath =
+                     "C:/Users/prpraramlikm/source/repos/ReportsApplication1/ReportsApplication1/report1.rdlc";
+            this.reportViewer1.ServerReport.SetParameters( new ReportParameter[] { salesStore });
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(682, 386);
+            this.Controls.Add(this.reportViewer1);
+            this.Name = "Form1";
+            this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+       private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+       
+    
+         
+    }
+}
+
